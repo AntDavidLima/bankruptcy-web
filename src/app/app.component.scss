@@ -1,0 +1,47 @@
+mat-sidenav-container {
+  height: 100%;
+}
+
+mat-nav-list {
+  padding: 0;
+}
+
+mat-sidenav {
+  transition: all 300ms;
+  width: 56px;
+}
+
+mat-sidenav.expanded {
+  width: 200px;
+}
+
+mat-sidenav-content {
+  transition: all 300ms;
+}
+
+mat-sidenav-content.sidenavExpanded {
+  padding-left: calc(200px - 56px);
+}
+
+#expand-sidenav {
+  bottom: 0;
+  position: absolute;
+  padding-right: 40px;
+}
+
+#expand-sidenav mat-icon {
+  transition: all 300ms;
+  margin-left: 100%;
+}
+
+mat-icon.rotated {
+  transform: rotate(180deg) translate(0, 0);
+}
+
+mat-icon {
+  margin-right: 0 !important;
+}
+
+a {
+  margin-left: 16px;
+}
