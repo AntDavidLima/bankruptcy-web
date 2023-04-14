@@ -1,20 +1,23 @@
-<mat-sidenav-container>
+<mat-sidenav-container autosize>
   <mat-sidenav mode="side" opened [ngClass]="{ expanded: isSidenavExpanded }">
     <mat-nav-list>
-      <mat-list-item routerLink="">
+      <mat-list-item routerLink="" matTooltip="Overview" matTooltipPosition="right">
         <mat-icon matListItemIcon>home</mat-icon>
         <a *ngIf="isSidenavExpanded" matListItemTitle>Overview</a>
       </mat-list-item>
-      <mat-list-item routerLink="income">
+      <mat-list-item routerLink="income" matTooltip="Income" matTooltipPosition="right">
         <mat-icon matListItemIcon>trending_up</mat-icon>
         <a *ngIf="isSidenavExpanded" matListItemTitle>Income</a>
       </mat-list-item>
-      <mat-list-item id="expand-sidenav" (click)="isSidenavExpanded = !isSidenavExpanded">
+      <mat-list-item id="expand-sidenav" (click)="isSidenavExpanded = !isSidenavExpanded"
+        [matTooltip]="isSidenavExpanded ? 'Collapse' : 'Expand'" matTooltipPosition="right">
         <mat-icon [ngClass]="{ rotated: isSidenavExpanded }" matListItemIcon>chevron_right</mat-icon>
       </mat-list-item>
     </mat-nav-list>
   </mat-sidenav>
-  <mat-sidenav-content [ngClass]="{ sidenavExpanded: isSidenavExpanded }">
-    <router-outlet></router-outlet>
+  <mat-sidenav-content>
+    <main>
+      <router-outlet></router-outlet>
+    </main>
   </mat-sidenav-content>
 </mat-sidenav-container>
